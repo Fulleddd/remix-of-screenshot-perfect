@@ -477,7 +477,7 @@ export const FITMENT_SERVICES: FitmentService[] = [
   {
     title: "Instalação de suspensão",
     description:
-      "Montagem e regulagem de kits de suspensão, molas e amortecedores com vergonha e segurança.",
+      "Montagem e regulagem de kits de suspensão, molas e amortecedores com rigor e segurança.",
     image: "montagem-suspensao",
   },
   {

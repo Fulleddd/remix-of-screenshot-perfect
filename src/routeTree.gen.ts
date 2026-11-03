@@ -10,33 +10,154 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AcessoriosRouteImport } from './routes/acessorios'
+import { Route as ContactosRouteImport } from './routes/contactos'
+import { Route as MontagemRouteImport } from './routes/montagem'
+import { Route as PecasFordRouteImport } from './routes/pecas-ford'
+import { Route as PecasMazdaRouteImport } from './routes/pecas-mazda'
+import { Route as ProjetosRouteImport } from './routes/projetos'
+import { Route as SobreNosRouteImport } from './routes/sobre-nos'
+import { Route as ProdutosIndexRouteImport } from './routes/produtos.index'
+import { Route as ProdutosSlugRouteImport } from './routes/produtos.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AcessoriosRoute = AcessoriosRouteImport.update({
+  id: '/acessorios',
+  path: '/acessorios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactosRoute = ContactosRouteImport.update({
+  id: '/contactos',
+  path: '/contactos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MontagemRoute = MontagemRouteImport.update({
+  id: '/montagem',
+  path: '/montagem',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PecasFordRoute = PecasFordRouteImport.update({
+  id: '/pecas-ford',
+  path: '/pecas-ford',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PecasMazdaRoute = PecasMazdaRouteImport.update({
+  id: '/pecas-mazda',
+  path: '/pecas-mazda',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjetosRoute = ProjetosRouteImport.update({
+  id: '/projetos',
+  path: '/projetos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SobreNosRoute = SobreNosRouteImport.update({
+  id: '/sobre-nos',
+  path: '/sobre-nos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProdutosIndexRoute = ProdutosIndexRouteImport.update({
+  id: '/produtos/',
+  path: '/produtos/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProdutosSlugRoute = ProdutosSlugRouteImport.update({
+  id: '/produtos/$slug',
+  path: '/produtos/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/acessorios': typeof AcessoriosRoute
+  '/contactos': typeof ContactosRoute
+  '/montagem': typeof MontagemRoute
+  '/pecas-ford': typeof PecasFordRoute
+  '/pecas-mazda': typeof PecasMazdaRoute
+  '/projetos': typeof ProjetosRoute
+  '/sobre-nos': typeof SobreNosRoute
+  '/produtos/$slug': typeof ProdutosSlugRoute
+  '/produtos/': typeof ProdutosIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/acessorios': typeof AcessoriosRoute
+  '/contactos': typeof ContactosRoute
+  '/montagem': typeof MontagemRoute
+  '/pecas-ford': typeof PecasFordRoute
+  '/pecas-mazda': typeof PecasMazdaRoute
+  '/projetos': typeof ProjetosRoute
+  '/sobre-nos': typeof SobreNosRoute
+  '/produtos/$slug': typeof ProdutosSlugRoute
+  '/produtos': typeof ProdutosIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/acessorios': typeof AcessoriosRoute
+  '/contactos': typeof ContactosRoute
+  '/montagem': typeof MontagemRoute
+  '/pecas-ford': typeof PecasFordRoute
+  '/pecas-mazda': typeof PecasMazdaRoute
+  '/projetos': typeof ProjetosRoute
+  '/sobre-nos': typeof SobreNosRoute
+  '/produtos/$slug': typeof ProdutosSlugRoute
+  '/produtos/': typeof ProdutosIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/acessorios'
+    | '/contactos'
+    | '/montagem'
+    | '/pecas-ford'
+    | '/pecas-mazda'
+    | '/projetos'
+    | '/sobre-nos'
+    | '/produtos/$slug'
+    | '/produtos/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/acessorios'
+    | '/contactos'
+    | '/montagem'
+    | '/pecas-ford'
+    | '/pecas-mazda'
+    | '/projetos'
+    | '/sobre-nos'
+    | '/produtos/$slug'
+    | '/produtos'
+  id:
+    | '__root__'
+    | '/'
+    | '/acessorios'
+    | '/contactos'
+    | '/montagem'
+    | '/pecas-ford'
+    | '/pecas-mazda'
+    | '/projetos'
+    | '/sobre-nos'
+    | '/produtos/$slug'
+    | '/produtos/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AcessoriosRoute: typeof AcessoriosRoute
+  ContactosRoute: typeof ContactosRoute
+  MontagemRoute: typeof MontagemRoute
+  PecasFordRoute: typeof PecasFordRoute
+  PecasMazdaRoute: typeof PecasMazdaRoute
+  ProjetosRoute: typeof ProjetosRoute
+  SobreNosRoute: typeof SobreNosRoute
+  ProdutosSlugRoute: typeof ProdutosSlugRoute
+  ProdutosIndexRoute: typeof ProdutosIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +169,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/acessorios': {
+      id: '/acessorios'
+      path: '/acessorios'
+      fullPath: '/acessorios'
+      preLoaderRoute: typeof AcessoriosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contactos': {
+      id: '/contactos'
+      path: '/contactos'
+      fullPath: '/contactos'
+      preLoaderRoute: typeof ContactosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/montagem': {
+      id: '/montagem'
+      path: '/montagem'
+      fullPath: '/montagem'
+      preLoaderRoute: typeof MontagemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pecas-ford': {
+      id: '/pecas-ford'
+      path: '/pecas-ford'
+      fullPath: '/pecas-ford'
+      preLoaderRoute: typeof PecasFordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pecas-mazda': {
+      id: '/pecas-mazda'
+      path: '/pecas-mazda'
+      fullPath: '/pecas-mazda'
+      preLoaderRoute: typeof PecasMazdaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projetos': {
+      id: '/projetos'
+      path: '/projetos'
+      fullPath: '/projetos'
+      preLoaderRoute: typeof ProjetosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sobre-nos': {
+      id: '/sobre-nos'
+      path: '/sobre-nos'
+      fullPath: '/sobre-nos'
+      preLoaderRoute: typeof SobreNosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/produtos/': {
+      id: '/produtos/'
+      path: '/produtos'
+      fullPath: '/produtos/'
+      preLoaderRoute: typeof ProdutosIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/produtos/$slug': {
+      id: '/produtos/$slug'
+      path: '/produtos/$slug'
+      fullPath: '/produtos/$slug'
+      preLoaderRoute: typeof ProdutosSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AcessoriosRoute: AcessoriosRoute,
+  ContactosRoute: ContactosRoute,
+  MontagemRoute: MontagemRoute,
+  PecasFordRoute: PecasFordRoute,
+  PecasMazdaRoute: PecasMazdaRoute,
+  ProjetosRoute: ProjetosRoute,
+  SobreNosRoute: SobreNosRoute,
+  ProdutosSlugRoute: ProdutosSlugRoute,
+  ProdutosIndexRoute: ProdutosIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
