@@ -7,7 +7,7 @@ import { productMessage } from "@/lib/whatsapp";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 
 export function ProductCard({ product }: { product: Product }) {
-  const categoryLabel = AVAILABILITY_LABEL[product.availability];
+  const categoryLabel = getCategory(product.category)?.shortName ?? AVAILABILITY_LABEL[product.availability];
 
   return (
     <article className="card-hover img-zoom group flex flex-col overflow-hidden rounded-xl border border-border bg-card">
