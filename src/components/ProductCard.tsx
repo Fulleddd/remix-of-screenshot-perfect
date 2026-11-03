@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import type { Product } from "@/data/catalog";
-import { AVAILABILITY_LABEL } from "@/data/catalog";
+import { AVAILABILITY_LABEL, getCategory } from "@/data/catalog";
 import { productImage } from "@/data/images";
 import { productMessage } from "@/lib/whatsapp";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
@@ -13,7 +13,7 @@ export function ProductCard({ product }: { product: Product }) {
     <article className="card-hover img-zoom group flex flex-col overflow-hidden rounded-xl border border-border bg-card">
       <Link to="/produtos/$slug" params={{ slug: product.slug }} className="relative block aspect-[4/3] bg-muted">
         <img
-          src={productImage(product.images[0])}
+          src={productImage(product.images[0] ?? "")}
           alt={product.name}
           width={1024}
           height={1024}

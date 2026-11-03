@@ -4,9 +4,9 @@ import { PageHero, FitmentBanner } from "@/components/PageParts";
 import { HERO_IMAGE } from "@/data/images";
 
 export const Route = createFileRoute("/produtos/")({
-  validateSearch: (s: Record<string, unknown>): { q?: string; categoria?: string } => ({
-    q: typeof s.q === "string" ? s.q : undefined,
-    categoria: typeof s.categoria === "string" ? s.categoria : undefined,
+  validateSearch: (s: Record<string, unknown>): { q?: string | undefined; categoria?: string | undefined } => ({
+    q: typeof s["q"] === "string" ? s["q"] : undefined,
+    categoria: typeof s["categoria"] === "string" ? s["categoria"] : undefined,
   }),
   head: () => ({
     meta: [
@@ -25,7 +25,7 @@ function ProdutosPage() {
     <>
       <PageHero eyebrow="Catálogo" title="Peças e acessórios" intro="Pesquise por nome, referência ou modelo. Preços e disponibilidade sob consulta pelo WhatsApp." image={HERO_IMAGE} />
       <section className="container-site py-12">
-        <Catalog key={`${q ?? ""}|${categoria ?? ""}`} initialQuery={q} initialCategory={categoria} />
+        <Catalog key={`${q ?? ""}|${categoria ?? ""}`} initialQuery={q ?? ""} initialCategory={categoria ?? ""} />
       </section>
       <FitmentBanner />
     </>

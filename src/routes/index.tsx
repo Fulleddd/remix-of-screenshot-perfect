@@ -60,7 +60,7 @@ function Index() {
         <SectionHeading eyebrow="Categorias" title="Compre por categoria" action={<Link to="/produtos" className="text-sm font-semibold text-brand hover:underline">Ver todas</Link>} />
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {CATEGORIES.map((c) => (
-            <CategoryCard key={c.slug} image={CATEGORY_IMAGES[c.slug]} title={c.shortName} description={c.description} href="/produtos" search={{ categoria: c.slug }} />
+            <CategoryCard key={c.slug} image={CATEGORY_IMAGES[c.slug] ?? HERO_IMAGE} title={c.shortName} description={c.description} href="/produtos" search={{ categoria: c.slug }} />
           ))}
         </div>
       </section>

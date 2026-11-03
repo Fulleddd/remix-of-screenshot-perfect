@@ -48,7 +48,7 @@ function ProductPage() {
         </Link>
         <div className="mt-6 grid gap-10 lg:grid-cols-2">
           <div className="overflow-hidden rounded-xl border border-border bg-muted">
-            <img src={productImage(p.images[0])} alt={p.name} width={1024} height={1024} className="aspect-square w-full object-cover" />
+            <img src={productImage(p.images[0] ?? "")} alt={p.name} width={1024} height={1024} className="aspect-square w-full object-cover" />
           </div>
           <div>
             <p className="text-sm font-medium text-brand">{cat?.name}</p>

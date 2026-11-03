@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Catalog } from "@/components/Catalog";
 import { PageHero, FitmentBanner } from "@/components/PageParts";
-import { PRODUCT_IMAGES } from "@/data/images";
+import { productImage } from "@/data/images";
 import type { CategorySlug } from "@/data/catalog";
 
 const CATS: CategorySlug[] = ["acessorios-4x4", "acessorios-exteriores", "acessorios-interiores", "desempenho"];
@@ -17,7 +17,7 @@ export const Route = createFileRoute("/acessorios")({
   }),
   component: () => (
     <>
-      <PageHero eyebrow="Acessórios" title="Acessórios 4x4" intro="Equipamento para trabalho e aventura: recuperação, iluminação, proteção exterior e conforto interior." image={PRODUCT_IMAGES.guincho} />
+      <PageHero eyebrow="Acessórios" title="Acessórios 4x4" intro="Equipamento para trabalho e aventura: recuperação, iluminação, proteção exterior e conforto interior." image={productImage("guincho")} />
       <section className="container-site py-12"><Catalog categories={CATS} /></section>
       <FitmentBanner />
     </>

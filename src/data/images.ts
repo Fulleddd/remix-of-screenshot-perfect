@@ -45,7 +45,7 @@ export const CATEGORY_IMAGES: Record<string, string> = {
 };
 
 export function productImage(key: string): string {
-  return PRODUCT_IMAGES[key] ?? PRODUCT_IMAGES.suspensao;
+  return PRODUCT_IMAGES[key] ?? suspensao;
 }
 
 /** Imagens de projeto (conteúdo de demonstração). */
